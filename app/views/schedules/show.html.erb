@@ -1,0 +1,38 @@
+<%= render "shared/header" %>
+
+<h3>スケジュール詳細</h3>
+
+<div>
+    <table>
+    <tr>
+        <th>タイトル</th>
+        <td><%= @schedule.title %></td>
+    </tr>
+    <tr>
+        <th>開始日</th>
+        <td><%= @schedule.start.to_s(:datetime_jp1) %></td>
+    </tr>
+    <tr>
+        <th>終了日</th>
+        <td><%= @schedule.finish.to_s(:datetime_jp1) %></td>
+    </tr>
+    <tr>
+        <th>終日</th>
+        <td>
+            <% if @schedule.all_day == true %>
+                <p>◯</p>
+            <% end %>
+        </td>
+    </tr>
+    <tr>
+        <th>スケジュールメモ</th>
+        <td><%= @schedule.memo %></td>
+    </tr>
+</table>
+</div>
+
+<div>
+    <ul>
+        <a href="/schedules/index">スケジュール一覧に戻る</a>
+    </ul>
+</div>
